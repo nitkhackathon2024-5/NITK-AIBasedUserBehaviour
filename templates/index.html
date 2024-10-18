@@ -3,105 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Behaviour Prediction</title>
+    <title>Net Banking Persona Prediction</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #F5F5F5;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         h2 {
+            color: #B31B1B;
             text-align: center;
-        }
-        form {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 600px;
-            margin: 0 auto;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            font-size: 28px;
+            margin-bottom: 20px;
         }
         label {
+            color: #333;
+            font-weight: bold;
             display: block;
-            margin: 10px 0 5px;
+            margin-top: 15px;
         }
-        input, select {
+        select, input {
             width: 100%;
             padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
+            margin-top: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
             border-radius: 5px;
+            box-sizing: border-box;
         }
         button {
             width: 100%;
-            padding: 10px;
-            background-color: #28a745;
-            border: none;
+            background-color: #B31B1B;
             color: white;
+            padding: 15px;
             font-size: 16px;
-            cursor: pointer;
+            border: none;
             border-radius: 5px;
+            cursor: pointer;
         }
         button:hover {
-            background-color: #218838;
+            background-color: #A31515;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+        }
+        footer a {
+            color: #B31B1B;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>AI-Based User Behaviour Prediction</h2>
-        <form action="/predict" method="post">
-            <!-- Feature Input -->
-            <h3>Enter Feature Details</h3>
-            
-            <label for="feature_name">Feature Name:</label>
-            <input type="text" id="feature_name" name="feature_name" placeholder="e.g., Smart Financial Assistant" required>
-            
-            <label for="feature_type">Feature Type:</label>
-            <select id="feature_type" name="feature_type" required>
-                <option value="Functionality">Functionality</option>
-                <option value="Usability">Usability</option>
-                <option value="UI Changes">UI Changes</option>
-                <option value="Notifications">Notifications</option>
-            </select>
-            
-            <label for="description">Feature Description:</label>
-            <textarea id="description" name="description" rows="4" placeholder="Describe the feature" required></textarea>
-            
-            <!-- Persona Selection -->
-            <h3>Select User Persona</h3>
-            
-            <label for="persona">User Persona:</label>
-            <select id="persona" name="persona" required>
-                <option value="Tech-Savvy Millennial">Tech-Savvy Millennial</option>
-                <option value="Busy Professional">Busy Professional</option>
-                <option value="Small Business Owner">Small Business Owner</option>
-                <option value="Retiree/Conservative Investor">Retiree/Conservative Investor</option>
-                <option value="Frequent Traveler/Expat">Frequent Traveler/Expat</option>
-                <option value="New-to-Banking/Rural User">New-to-Banking/Rural User</option>
-                <option value="High-Net-Worth Individual">High-Net-Worth Individual (HNI)</option>
-            </select>
-            
-            <!-- Persona Customization -->
-            <h3>Customize Persona Traits (Optional)</h3>
-            
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" placeholder="e.g., 30" min="18" max="100">
-            
-            <label for="tech_familiarity">Tech Familiarity (1-10):</label>
-            <input type="number" id="tech_familiarity" name="tech_familiarity" placeholder="e.g., 8" min="1" max="10">
-            
-            <label for="income">Income (in USD):</label>
-            <input type="number" id="income" name="income" placeholder="e.g., 75000">
-            
-            <!-- Submit Button -->
-            <button type="submit">Predict User Behavior</button>
-        </form>
-    </div>
+
+<div class="container">
+    <h2>AI-Based User Behaviour Prediction for
+        Mobile App Features</h2>
+    <form action="/predict" method="POST">
+        <label for="persona">Select Persona:</label>
+        <select name="persona" id="persona">
+            <option value="Tech-Savvy Millennial">Tech-Savvy Millennial</option>
+            <option value="Busy Professional">Busy Professional</option>
+            <option value="Small Business Owner">Small Business Owner</option>
+            <option value="Retiree/Conservative Investor">Retiree/Conservative Investor</option>
+            <option value="Frequent Traveler/Expat">Frequent Traveler/Expat</option>
+            <option value="New-to-Banking/Rural User">New-to-Banking/Rural User</option>
+            <option value="High-Net-Worth Individual">High-Net-Worth Individual (HNI)</option>
+        </select>
+
+        <label for="feature">Select Feature:</label>
+        <select name="feature" id="feature">
+            <option value="AI-Powered Financial Assistant">AI-Powered Smart Financial Assistant</option>
+            <option value="Card Management Hub">Card Management Hub with Virtual Cards and Spend Limits</option>
+        </select>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" placeholder="Enter age">
+
+        <label for="tech_familiarity">Tech Familiarity (1-10):</label>
+        <input type="number" name="tech_familiarity" id="tech_familiarity" min="1" max="10" placeholder="Enter tech familiarity">
+
+        <label for="income">Income:</label>
+        <input type="number" name="income" id="income" placeholder="Enter income">
+
+        <button type="submit">Predict</button>
+    </form>
+</div>
+
+<footer>
+    <p>© 2024 Wells Fargo Inspired | <a href="/">Return to Home</a></p>
+</footer>
+
 </body>
 </html>

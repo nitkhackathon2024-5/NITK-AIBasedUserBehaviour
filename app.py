@@ -15,7 +15,7 @@ def predict():
     # Simulate predictions (use your machine learning model here)
     adoption = 85.0  # Example prediction for feature adoption likelihood
     engagement = 9  # Example engagement level out of 10
-    pain_points = 3  # Example pain points prediction out of 10
+    pain_points = "Accepted"  # Example pain points prediction out of 10
 
     # Render result.html with the prediction results
     return render_template('result.html', feature_name=feature_name, persona=persona, 

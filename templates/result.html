@@ -7,103 +7,85 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
+            background-color: #F5F5F5;
             margin: 0;
             padding: 0;
         }
         .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .result-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 50px auto;
             background-color: #fff;
             padding: 30px;
-            border-radius: 12px;
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 100%;
-            text-align: center;
         }
         h2 {
-            color: #333;
+            color: #B31B1B;
+            text-align: center;
+            font-size: 28px;
             margin-bottom: 20px;
         }
         p {
             font-size: 18px;
-            color: #555;
+            color: #333;
             line-height: 1.6;
-            margin-bottom: 15px;
         }
-        .result-container strong {
-            color: #111;
-        }
-        .result-box {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        .result-box p {
-            margin: 0;
-            font-size: 16px;
-        }
-        .highlight {
+        p span {
+            color: #B31B1B;
             font-weight: bold;
-            color: #007bff;
         }
         .back-link {
             margin-top: 20px;
+            text-align: center;
         }
         .back-link a {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #28a745;
-            color: #fff;
-            text-decoration: none;
+            background-color: #B31B1B;
+            color: white;
+            padding: 12px 25px;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            text-decoration: none;
+            font-size: 16px;
         }
         .back-link a:hover {
-            background-color: #218838;
+            background-color: #A31515;
         }
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .result-container {
-                padding: 20px;
-                max-width: 100%;
-            }
-            p {
-                font-size: 16px;
-            }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+        }
+        footer a {
+            color: #B31B1B;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="result-container">
-            <h2>Feature Adoption Predictions</h2>
-            
-            <!-- Display the predicted results in detail -->
-            <div class="result-box">
-                <p><strong>Feature Name:</strong> <span class="highlight">{{ feature_name }}</span></p>
-                <p><strong>Persona:</strong> <span class="highlight">{{ persona }}</span></p>
-            </div>
 
-            <h3>Predicted User Behavior</h3>
-            <div class="result-box">
-                <p><strong>Feature Adoption Likelihood:</strong> <span class="highlight">{{ adoption }}%</span></p>
-                <p><strong>Engagement Level:</strong> <span class="highlight">{{ engagement }}/10</span></p>
-                <p><strong>Potential Pain Points:</strong> <span class="highlight">{{ pain_points }}/10</span></p>
-            </div>
+<div class="container">
+    <h2>Prediction Results</h2>
 
-            <!-- Button to go back to the form -->
-            <div class="back-link">
-                <a href="/">Predict for Another Feature</a>
-            </div>
-        </div>
+    <p><strong>Feature:</strong> <span>{{ feature }}</span></p>
+    <p><strong>Persona:</strong> <span>{{ persona }}</span></p>
+
+    <h3>Predicted User Behavior</h3>
+    <p><strong>Feature Adoption Likelihood:</strong> <span>{{ adoption }}%</span></p>
+    <p><strong>Engagement Level:</strong> <span>{{ engagement }}/10</span></p>
+    <p><strong>Potential Pain Points:</strong> <span>{{ pain_points }}</span></p>
+
+    <div class="back-link">
+        <a href="/">Predict for Another Feature</a>
     </div>
+</div>
+
+<footer>
+    <p>© 2024 Wells Fargo Inspired | <a href="/">Return to Home</a></p>
+</footer>
+
 </body>
 </html>
