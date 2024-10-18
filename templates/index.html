@@ -1,3 +1,94 @@
+<!-- <!-- <!-- <!-- <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature Prediction and Pain Points</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Feature Prediction and Potential Pain Points</h1>
+        <form method="POST" action="/predict" class="mt-4">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="tech_savviness">Tech Savviness (1-10):</label>
+                <input type="number" class="form-control" id="tech_savviness" name="tech_savviness" required min="1" max="10">
+            </div>
+            
+            <div class="form-group">
+                <label for="income">Annual Income:</label>
+                <input type="number" class="form-control" id="income" name="income" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="persona">Persona:</label>
+                <select class="form-control" id="persona" name="persona" required>
+                    <option value="Tech-Savvy Millennial">Tech-Savvy Millennial</option>
+                    <option value="Busy Professional">Busy Professional</option>
+                    <option value="Small Business Owner">Small Business Owner</option>
+                    <option value="Retiree/Conservative Investor">Retiree/Conservative Investor</option>
+                    <option value="Frequent Traveler/Expat">Frequent Traveler/Expat</option>
+                    <option value="New-to-Banking/Rural User">New-to-Banking/Rural User</option>
+                    <option value="High-Net-Worth Individual (HNI)">High-Net-Worth Individual (HNI)</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="feature">Feature:</label>
+                <select class="form-control" id="feature" name="feature" required>
+                    <option value="smart_assistant">Smart Assistant</option>
+                    <option value="card_management">Card Management</option>
+                    <option value="investment_tools">Investment Tools</option>
+                    <option value="mobile_banking">Mobile Banking</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+
+        {% if adoption_probability %}
+            <div class="mt-4">
+                <h2>Adoption Probability: {{ adoption_probability }}%</h2>
+            </div>
+        {% endif %}
+
+        {% if expected_engagement %}
+            <div class="mt-2">
+                <h2>Expected Engagement: {{ expected_engagement }}</h2>
+            </div>
+        {% endif %}
+
+        {% if persona %}
+            <div class="mt-2">
+                <h2>Selected Persona: {{ persona }}</h2>
+            </div>
+        {% endif %}
+
+        {% if feature %}
+            <div class="mt-2">
+                <h2>Selected Feature: {{ feature }}</h2>
+            </div>
+        {% endif %}
+
+        {% if pain_points %}
+            <div class="mt-4">
+                <h2>Potential Pain Points:</h2>
+                <ul>
+                    {% for point in pain_points.split(",") %}
+                        <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,8 +162,7 @@
 <body>
 
 <div class="container">
-    <h2>AI-Based User Behaviour Prediction for
-        Mobile App Features</h2>
+    <h2>AI-Based User Behaviour Prediction for Mobile App Features</h2>
     <form action="/predict" method="POST">
         <label for="persona">Select Persona:</label>
         <select name="persona" id="persona">
@@ -92,13 +182,13 @@
         </select>
 
         <label for="age">Age:</label>
-        <input type="number" name="age" id="age" placeholder="Enter age">
+        <input type="number" name="age" id="age" placeholder="Enter age" required>
 
         <label for="tech_familiarity">Tech Familiarity (1-10):</label>
-        <input type="number" name="tech_familiarity" id="tech_familiarity" min="1" max="10" placeholder="Enter tech familiarity">
+        <input type="number" name="tech_familiarity" id="tech_familiarity" min="1" max="10" placeholder="Enter tech familiarity" required>
 
         <label for="income">Income:</label>
-        <input type="number" name="income" id="income" placeholder="Enter income">
+        <input type="number" name="income" id="income" placeholder="Enter income" required>
 
         <button type="submit">Predict</button>
     </form>
@@ -109,4 +199,321 @@
 </footer>
 
 </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature Prediction and Pain Points</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Feature Prediction and Potential Pain Points</h1>
+        <form method="POST" action="/predict" class="mt-4">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="tech_savviness">Tech Savviness (1-10):</label>
+                <input type="number" class="form-control" id="tech_savviness" name="tech_savviness" required min="1" max="10">
+            </div>
+            <div class="form-group">
+                <label for="income">Annual Income:</label>
+                <input type="number" class="form-control" id="income" name="income" required>
+            </div>
+            <div class="form-group">
+                <label for="persona">Persona:</label>
+                <select class="form-control" id="persona" name="persona" required>
+                    <option value="Tech-Savvy Millennial">Tech-Savvy Millennial</option>
+                    <option value="Busy Professional">Busy Professional</option>
+                    <option value="Small Business Owner">Small Business Owner</option>
+                    <option value="Retiree/Conservative Investor">Retiree/Conservative Investor</option>
+                    <option value="Frequent Traveler/Expat">Frequent Traveler/Expat</option>
+                    <option value="New-to-Banking/Rural User">New-to-Banking/Rural User</option>
+                    <option value="High-Net-Worth Individual (HNI)">High-Net-Worth Individual (HNI)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="feature">Feature:</label>
+                <select class="form-control" id="feature" name="feature" required>
+                    <option value="smart_assistant">Smart Assistant</option>
+                    <option value="card_management">Card Management</option>
+                    <option value="investment_tools">Investment Tools</option>
+                    <option value="mobile_banking">Mobile Banking</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        {% if adoption_probability %}
+            <div class="mt-4">
+                <h2>Adoption Probability: {{ adoption_probability }}%</h2>
+            </div>
+        {% endif %}
+        {% if expected_engagement %}
+            <div class="mt-2">
+                <h2>Expected Engagement: {{ expected_engagement }}</h2>
+            </div>
+        {% endif %}
+        {% if persona %}
+            <div class="mt-2">
+                <h2>Selected Persona: {{ persona }}</h2>
+            </div>
+        {% endif %}
+        {% if feature %}
+            <div class="mt-2">
+                <h2>Selected Feature: {{ feature }}</h2>
+            </div>
+        {% endif %}
+        {% if pain_points %}
+            <div class="mt-4">
+                <h2>Potential Pain Points:</h2>
+                <ul>
+                    {% for point in pain_points.split(",") %}
+                        <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature Prediction and Pain Points</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f5f5f5; /* Matches a light theme */
+            font-family: 'Arial', sans-serif; /* Consistent font */
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        h1 {
+            color: #343a40; /* Darker title color */
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .mt-4, .mt-2 {
+            margin-top: 1.5rem !important;
+        }
+        h2 {
+            color: #0056b3; /* Emphasized color for results */
+            margin-top: 10px;
+        }
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Feature Prediction and Potential Pain Points</h1>
+        <form method="POST" action="/predict" class="mt-4">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="tech_savviness">Tech Savviness (1-10):</label>
+                <input type="number" class="form-control" id="tech_savviness" name="tech_savviness" required min="1" max="10">
+            </div>
+            <div class="form-group">
+                <label for="income">Annual Income:</label>
+                <input type="number" class="form-control" id="income" name="income" required>
+            </div>
+            <div class="form-group">
+                <label for="persona">Persona:</label>
+                <select class="form-control" id="persona" name="persona" required>
+                    <option value="Tech-Savvy Millennial">Tech-Savvy Millennial</option>
+                    <option value="Busy Professional">Busy Professional</option>
+                    <option value="Small Business Owner">Small Business Owner</option>
+                    <option value="Retiree/Conservative Investor">Retiree/Conservative Investor</option>
+                    <option value="Frequent Traveler/Expat">Frequent Traveler/Expat</option>
+                    <option value="New-to-Banking/Rural User">New-to-Banking/Rural User</option>
+                    <option value="High-Net-Worth Individual (HNI)">High-Net-Worth Individual (HNI)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="feature">Feature:</label>
+                <select class="form-control" id="feature" name="feature" required>
+                    <option value="smart_assistant">Smart Assistant</option>
+                    <option value="card_management">Card Management</option>
+                    <option value="investment_tools">Investment Tools</option>
+                    <option value="mobile_banking">Mobile Banking</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        {% if adoption_probability %}
+            <div class="mt-4">
+                <h2>Adoption Probability: {{ adoption_probability }}%</h2>
+            </div>
+        {% endif %}
+        {% if expected_engagement %}
+            <div class="mt-2">
+                <h2>Expected Engagement: {{ expected_engagement }}</h2>
+            </div>
+        {% endif %}
+        {% if persona %}
+            <div class="mt-2">
+                <h2>Selected Persona: {{ persona }}</h2>
+            </div>
+        {% endif %}
+        {% if feature %}
+            <div class="mt-2">
+                <h2>Selected Feature: {{ feature }}</h2>
+            </div>
+        {% endif %}
+        {% if pain_points %}
+            <div class="mt-4">
+                <h2>Potential Pain Points:</h2>
+                <ul>
+                    {% for point in pain_points.split(",") %}
+                        <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature Prediction and Pain Points</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f7f7f7; /* Light background to maintain a professional look */
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+        h1 {
+            color: #b31b1b; /* Wells Fargo deep red for titles */
+        }
+        .btn-primary {
+            background-color: #b31b1b; /* Wells Fargo red for buttons */
+            border-color: #b31b1b;
+        }
+        .btn-primary:hover {
+            background-color: #8a1616; /* Darker shade for hover effect */
+            border-color: #8a1616;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .form-group label {
+            color: #555; /* Neutral color for form labels */
+        }
+        h2 {
+            color: #b31b1b; /* Consistent red for headings */
+            margin-top: 10px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Feature Prediction and Potential Pain Points</h1>
+        <form method="POST" action="/predict" class="mt-4">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" class="form-control" id="age" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="tech_savviness">Tech Savviness (1-10):</label>
+                <input type="number" class="form-control" id="tech_savviness" name="tech_savviness" required min="1" max="10">
+            </div>
+            <div class="form-group">
+                <label for="income">Annual Income:</label>
+                <input type="number" class="form-control" id="income" name="income" required>
+            </div>
+            <div class="form-group">
+                <label for="persona">Persona:</label>
+                <select class="form-control" id="persona" name="persona" required>
+                    <option value="Tech-Savvy Millennial">Tech-Savvy Millennial</option>
+                    <option value="Busy Professional">Busy Professional</option>
+                    <option value="Small Business Owner">Small Business Owner</option>
+                    <option value="Retiree/Conservative Investor">Retiree/Conservative Investor</option>
+                    <option value="Frequent Traveler/Expat">Frequent Traveler/Expat</option>
+                    <option value="New-to-Banking/Rural User">New-to-Banking/Rural User</option>
+                    <option value="High-Net-Worth Individual (HNI)">High-Net-Worth Individual (HNI)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="feature">Feature:</label>
+                <select class="form-control" id="feature" name="feature" required>
+                    <option value="smart_assistant">AI-Powered Smart Financial Assistant</option>
+                    <option value="card_management">Card Management Hub with Virtual Cards and Spend Limits</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        {% if adoption_probability %}
+            <div class="mt-4">
+                <h2>Adoption Probability: {{ adoption_probability }}%</h2>
+            </div>
+        {% endif %}
+        {% if expected_engagement %}
+            <div class="mt-2">
+                <h2>Expected Engagement: {{ expected_engagement }}</h2>
+            </div>
+        {% endif %}
+        {% if persona %}
+            <div class="mt-2">
+                <h2>Selected Persona: {{ persona }}</h2>
+            </div>
+        {% endif %}
+        {% if feature %}
+            <div class="mt-2">
+                <h2>Selected Feature: {{ feature }}</h2>
+            </div>
+        {% endif %}
+        {% if pain_points %}
+            <div class="mt-4">
+                <h2>Potential Pain Points:</h2>
+                <ul>
+                    {% for point in pain_points.split(",") %}
+                        <li>{{ point }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</body>
+<footer style="text-align: center;">
+    <p>© 2024 Wells Fargo Inspired</p>
+</footer>
+
 </html>
+
