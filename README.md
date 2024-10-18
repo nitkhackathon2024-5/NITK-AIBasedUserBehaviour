@@ -1,4 +1,4 @@
-# Wells Fargo Hackathon Project
+# 2.3 Problem Statement: AI-Based User Behaviour Prediction for Mobile App Features
 
 ## Table of Contents
 - [Project Overview](#project-overview)
