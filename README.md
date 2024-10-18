@@ -38,12 +38,12 @@ This project was developed during the Wells Fargo Hackathon, where we aimed to c
    python app.py
    Navigate to http://127.0.0.1:5000/ in your web browser.
 
-##Usage
+## Usage
 1. Fill out the form with user data, including age, tech savviness, income, persona, and feature selection.
 2. Click the "Predict" button to view adoption probabilities, expected engagement, and pain points.
 3. Review the insights provided based on your inputs.
 
-##Contact
+## Contact
 For questions or feedback, please reach out to:
 
 Name: Sugavanam Senthil
