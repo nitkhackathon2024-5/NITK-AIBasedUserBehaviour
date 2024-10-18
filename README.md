@@ -6,10 +6,7 @@
 - [Technologies Used](#technologies-used)
 - [Installation Instructions](#installation-instructions)
 - [Usage](#usage)
-- [Market Trends Integration](#market-trends-integration)
-- [Real-time Updates](#real-time-updates)
 - [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Project Overview
@@ -30,8 +27,8 @@ This project was developed during the Wells Fargo Hackathon, where we aimed to c
 ## Installation Instructions
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/wells-fargo-hackathon.git
-   cd wells-fargo-hackathon
+   git clone https://github.com/nitkhackathon2024-5/hcwl.git
+   
 ## Install Dependencies
 2. **Install Dependencies**:
    ```bash
@@ -40,4 +37,19 @@ This project was developed during the Wells Fargo Hackathon, where we aimed to c
    ```bash
    python app.py
    Navigate to http://127.0.0.1:5000/ in your web browser.
+
+##Usage
+1. Fill out the form with user data, including age, tech savviness, income, persona, and feature selection.
+2. Click the "Predict" button to view adoption probabilities, expected engagement, and pain points.
+3. Review the insights provided based on your inputs.
+
+##Contact
+For questions or feedback, please reach out to:
+
+Name: Sugavanam Senthil
+Email: sugavanam.211ec152@nitk.edu.in
+
+Name: Vandana S 
+Email: vandana.211ec260@nitk.edu.in
+
 
