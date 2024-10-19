@@ -48,6 +48,9 @@ This project was developed during the Wells Fargo Hackathon, where we aimed to c
 Navigate to the Directory artifacts-demo-video
 Open file demo.mp4
 ```
+```
+Or navigate to the link: https://drive.google.com/file/d/1gC1mMKOmO1Zkd3uCNzu8WPsq88pjYct4/view?usp=sharing
+```
 ## Contact
 For questions or feedback, please reach out to:
 
