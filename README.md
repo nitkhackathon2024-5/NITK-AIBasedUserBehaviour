@@ -6,8 +6,9 @@
 - [Technologies Used](#technologies-used)
 - [Installation Instructions](#installation-instructions)
 - [Usage](#usage)
-- [Contributing](#contributing)
+- [Demo](#demo)
 - [Contact](#contact)
+  
 
 ## Project Overview
 This project was developed during the Wells Fargo Hackathon, where we aimed to create an intelligent system for predicting user adoption and engagement for various banking features. The application uses machine learning models to analyze user personas and provide insights into potential pain points and adoption probabilities for features like smart assistants, card management, investment tools, and mobile banking.
