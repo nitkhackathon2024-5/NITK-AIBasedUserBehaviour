@@ -44,6 +44,10 @@ This project was developed during the Wells Fargo Hackathon, where we aimed to c
 2. Click the "Predict" button to view adoption probabilities, expected engagement, and pain points.
 3. Review the insights provided based on your inputs.
 
+## Demo 
+```bash
+Navigate to Directory demo
+```
 ## Contact
 For questions or feedback, please reach out to:
 
