@@ -46,7 +46,8 @@ This project was developed during the Wells Fargo Hackathon, where we aimed to c
 
 ## Demo 
 ```bash
-Navigate to Directory demo
+Navigate to the Directory artifacts-demo-video
+Open file demo.mp4
 ```
 ## Contact
 For questions or feedback, please reach out to:
